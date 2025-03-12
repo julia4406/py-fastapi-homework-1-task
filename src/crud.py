@@ -24,7 +24,7 @@ async def get_all_movies_paginated(
     all_movies = result.scalars().all()
 
     movies = all_movies[offset:offset + per_page]
-    total_items = len(movies)
+    total_items = len(all_movies)
     total_pages = total_items // per_page + (
         1 if total_items % per_page != 0 else 0
     )
